@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct CitiBikeMapAppApp: App {
+    @StateObject private var viewModel = CitiBikeMapViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
+                .environmentObject(viewModel)
         }
     }
 }
